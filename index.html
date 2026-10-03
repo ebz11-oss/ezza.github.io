@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ezza Zaidi | Marketing & Digital Portfolio</title>
-  <meta name="description" content="Portfolio of Ezza Zaidi — Rutgers University marketing student focused on marketing, social media, digital content, and design.">
+  <meta name="description" content="Ezza Zaidi's portfolio showcasing marketing, social media, digital content, and design.">
+  <title>Ezza Zaidi | Portfolio</title>
 
   <style>
     :root {
@@ -12,8 +12,8 @@
       --card: #ffffff;
       --text: #0f172a;
       --muted: #64748b;
-      --accent: #be185d;
-      --accent-light: #fce7f3;
+      --accent: #9f4566;
+      --accent-light: #f7eaf0;
       --border: #e2e8f0;
       --max-width: 1120px;
     }
@@ -30,16 +30,14 @@
     }
 
     body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
-        BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.65;
     }
 
     a {
       color: inherit;
-      text-decoration: none;
     }
 
     .container {
@@ -50,10 +48,10 @@
     nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(14px);
+      z-index: 10;
+      background: rgba(248, 250, 252, 0.96);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .nav-inner {
@@ -61,22 +59,32 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
     }
 
-    .logo {
-      font-size: 1.15rem;
+    .brand {
+      font-size: 1.1rem;
       font-weight: 800;
       letter-spacing: -0.04em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--accent);
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 16px;
       list-style: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    .nav-links a {
       color: #475569;
+      text-decoration: none;
     }
 
     .nav-links a:hover {
@@ -84,9 +92,6 @@
     }
 
     .hero {
-      min-height: 72vh;
-      display: flex;
-      align-items: center;
       padding: 100px 0 90px;
     }
 
@@ -96,26 +101,26 @@
 
     .eyebrow,
     .section-label {
+      margin-bottom: 14px;
       color: var(--accent);
-      font-weight: 750;
-      letter-spacing: 0.12em;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      font-size: 0.75rem;
-      margin-bottom: 15px;
     }
 
     h1 {
-      font-size: clamp(3.5rem, 9vw, 6.7rem);
+      margin-bottom: 24px;
+      font-size: clamp(3.4rem, 9vw, 6.8rem);
       line-height: 0.98;
       letter-spacing: -0.075em;
-      margin-bottom: 26px;
     }
 
     .hero-description {
-      max-width: 690px;
+      max-width: 740px;
+      margin-bottom: 28px;
       color: var(--muted);
       font-size: clamp(1.05rem, 2vw, 1.22rem);
-      margin-bottom: 30px;
     }
 
     .buttons {
@@ -126,90 +131,85 @@
 
     .button {
       display: inline-block;
-      padding: 10px 17px;
+      padding: 10px 18px;
       border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      font-weight: 650;
-      font-size: 0.92rem;
+      border-radius: 999px;
       background: white;
+      font-weight: 700;
+      text-decoration: none;
       transition: 0.2s ease;
     }
 
     .button.primary {
-      background: var(--accent);
+      border-color: var(--text);
+      background: var(--text);
       color: white;
-      border-color: var(--accent);
     }
 
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 14px rgba(15, 23, 42, 0.08);
     }
 
     section {
-      padding: 78px 0;
+      padding: 76px 0;
       border-top: 1px solid var(--border);
     }
 
     h2 {
+      margin-bottom: 32px;
       font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.12;
       letter-spacing: -0.055em;
-      line-height: 1.1;
-      margin-bottom: 34px;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 42px;
       align-items: start;
     }
 
-    .about-text {
+    .about-copy {
       color: #475569;
-      font-size: 1rem;
     }
 
-    .about-text p + p {
-      margin-top: 16px;
+    .about-copy p + p {
+      margin-top: 15px;
     }
 
-    .quick-info {
+    .info-list {
       display: grid;
       gap: 12px;
     }
 
-    .info-item,
+    .info-card,
     .skill-card,
+    .project-card,
     .education-card,
     .leadership-card {
-      padding: 21px;
-      background: var(--card);
+      min-width: 0;
+      padding: 22px;
       border: 1px solid var(--border);
       border-radius: 16px;
+      background: var(--card);
       box-shadow: 0 2px 5px rgba(15, 23, 42, 0.025);
     }
 
-    .info-item strong {
+    .info-card strong {
       display: block;
       margin-bottom: 3px;
     }
 
-    .info-item span {
+    .info-card span {
       color: var(--muted);
       font-size: 0.94rem;
     }
 
-    .experience-list {
-      display: grid;
-      gap: 0;
-    }
-
     .experience-item {
       display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 38px;
-      padding: 28px 0;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 34px;
+      padding: 25px 0;
       border-top: 1px solid var(--border);
     }
 
@@ -219,60 +219,125 @@
 
     .date {
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
     }
 
     .role {
-      font-size: 1.2rem;
-      font-weight: 750;
-      letter-spacing: -0.02em;
       margin-bottom: 3px;
+      font-size: 1.16rem;
+      font-weight: 800;
     }
 
     .company,
     .subheading {
+      margin-bottom: 10px;
       color: var(--accent);
-      font-weight: 650;
-      margin-bottom: 12px;
-      font-size: 0.93rem;
+      font-size: 0.92rem;
+      font-weight: 700;
     }
 
     .experience-item ul,
     .leadership-card ul {
       padding-left: 19px;
       color: #475569;
-      font-size: 0.95rem;
     }
 
-    .experience-item li + li {
-      margin-top: 6px;
+    .experience-item li + li,
+    .leadership-card li + li {
+      margin-top: 5px;
     }
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
     }
 
     .skill-card h3 {
-      font-size: 0.98rem;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
+      font-size: 1rem;
     }
 
     .skill-card p {
       color: var(--muted);
-      font-size: 0.91rem;
+      font-size: 0.93rem;
+    }
+
+    .projects-intro {
+      max-width: 760px;
+      margin: -12px 0 25px;
+      color: var(--muted);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07);
+    }
+
+    .project-tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: #7f3150;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.12rem;
+    }
+
+    .project-type {
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .project-card p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .project-link {
+      margin-top: auto;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 750;
+      text-underline-offset: 4px;
+    }
+
+    .project-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.85rem;
     }
 
     .education-card h3,
     .leadership-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
+      font-size: 1.12rem;
     }
 
-    .education-card p,
-    .leadership-card p,
-    .leadership-card li {
+    .education-card p {
       color: #475569;
     }
 
@@ -285,79 +350,93 @@
     }
 
     .contact {
-      background: #fff;
-      color: var(--text);
+      background: #111827;
+      color: white;
     }
 
     .contact .section-label {
-      color: var(--accent);
-    }
-
-    .contact h2 {
-      max-width: 700px;
+      color: #f0bfd0;
     }
 
     .contact-text {
-      color: var(--muted);
-      max-width: 600px;
+      max-width: 620px;
       margin-bottom: 25px;
+      color: #cbd5e1;
+    }
+
+    .contact .button {
+      border-color: white;
+    }
+
+    .contact .button.primary {
+      background: white;
+      color: var(--text);
     }
 
     footer {
-      background: #f1f5f9;
-      color: #64748b;
+      padding: 23px 0;
+      background: #111827;
+      color: #cbd5e1;
       text-align: center;
-      padding: 24px 0;
-      font-size: 0.84rem;
-      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
     }
 
-    @media (max-width: 750px) {
+    @media (max-width: 850px) {
       .nav-inner {
-        min-height: 62px;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 13px 0;
+        gap: 8px;
       }
 
       .nav-links {
-        gap: 12px;
-        font-size: 0.8rem;
+        gap: 10px 15px;
       }
 
-      .hero {
-        min-height: 65vh;
-        padding: 75px 0;
-      }
-
-      .about-grid,
-      .skills-grid {
+      .about-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 20px;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 74px 0 68px;
+      }
+
+      section {
+        padding: 60px 0;
       }
 
       .experience-item {
         grid-template-columns: 1fr;
         gap: 7px;
-        padding: 25px 0;
       }
 
-      section {
-        padding: 62px 0;
-      }
-
-      h1 {
-        font-size: clamp(3.2rem, 17vw, 5rem);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .nav-inner {
-        align-items: flex-start;
-        padding: 14px 0;
-        flex-direction: column;
-        gap: 8px;
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
       }
 
       .nav-links {
-        gap: 13px;
+        font-size: 0.82rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
       }
     }
   </style>
@@ -365,17 +444,15 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
+  <nav aria-label="Main navigation">
     <div class="container nav-inner">
-      <a href="#top" class="logo">
-        Ezza Zaidi<span style="color: var(--accent)">.</span>
-      </a>
+      <a class="brand" href="#top">Ezza Zaidi<span>.</span></a>
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#leadership">Leadership</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -385,37 +462,28 @@
 
   <main id="top">
 
-    <!-- Hero -->
+    <!-- Personal statement -->
     <header class="hero">
       <div class="container hero-content">
-        <div class="eyebrow">
-          Marketing · Digital Content · Design
-        </div>
+        <p class="eyebrow">Marketing · Digital Content · Design</p>
 
         <h1>
-          Hi, I’m Ezza<br>
+          Hi, I'm Ezza<br>
           Zaidi<span style="color: var(--accent)">.</span>
         </h1>
 
         <p class="hero-description">
-          Rutgers University student exploring the intersection of marketing,
-          digital content, social media, and design. I like turning creative
-          ideas into clear, engaging experiences.
+          I am a Rutgers Business School marketing student with experience in
+          social media marketing, digital content creation, and design,
+          interested in creating engaging digital experiences for brands
+          and audiences.
         </p>
 
         <div class="buttons">
-          <a class="button primary" href="#experience">
-            View Experience
-          </a>
-
-          <a
-            class="button"
-            href="https://www.linkedin.com/in/ezzazaidi/"
-            target="_blank"
-            rel="noopener"
-          >
-            LinkedIn ↗
-          </a>
+          <a class="button primary" href="#projects">Explore Projects</a>
+          <a class="button"
+             href="https://www.linkedin.com/in/ezzazaidi/"
+             target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </div>
       </div>
     </header>
@@ -423,15 +491,15 @@
     <!-- About -->
     <section id="about">
       <div class="container">
-        <div class="section-label">01 — About</div>
+        <p class="section-label">01 — About</p>
         <h2>A little about me.</h2>
 
         <div class="about-grid">
-          <div class="about-text">
+          <div class="about-copy">
             <p>
               I'm a Rutgers Business School student pursuing a Bachelor of
-              Science in Business with a concentration in Marketing and a minor
-              in Digital Communication, Information, and Media.
+              Science in Business with a concentration in Marketing and a
+              minor in Digital Communication, Information, and Media.
             </p>
 
             <p>
@@ -442,24 +510,24 @@
             </p>
           </div>
 
-          <div class="quick-info">
-            <div class="info-item">
+          <div class="info-list">
+            <div class="info-card">
               <strong>University</strong>
               <span>Rutgers University — Rutgers Business School</span>
             </div>
 
-            <div class="info-item">
+            <div class="info-card">
               <strong>Degree</strong>
               <span>B.S. in Business — Marketing</span>
             </div>
 
-            <div class="info-item">
+            <div class="info-card">
               <strong>Minor</strong>
               <span>Digital Communication, Information, and Media (DCIM)</span>
             </div>
 
-            <div class="info-item">
-              <strong>Graduation</strong>
+            <div class="info-card">
+              <strong>Expected graduation</strong>
               <span>May 2028</span>
             </div>
           </div>
@@ -470,238 +538,251 @@
     <!-- Experience -->
     <section id="experience">
       <div class="container">
-        <div class="section-label">02 — Experience</div>
-        <h2>Experience & selected work.</h2>
+        <p class="section-label">02 — Experience</p>
+        <h2>Professional experience.</h2>
 
-        <div class="experience-list">
+        <article class="experience-item">
+          <div class="date">June 2026 — August 2026<br>Remote</div>
+          <div>
+            <h3 class="role">Social Media Marketing Intern</h3>
+            <p class="company">Beauty Coterie</p>
+            <ul>
+              <li>Managed and creatively directed social media platforms.</li>
+              <li>Developed campaign concepts and design elements to promote
+                an AI-powered beauty tool offering personalized skincare
+                recommendations.</li>
+            </ul>
+          </div>
+        </article>
 
-          <article class="experience-item">
-            <div class="date">
-              June 2026 — August 2026<br>
-              Remote
-            </div>
+        <article class="experience-item">
+          <div class="date">July 2025 — December 2025<br>Remote</div>
+          <div>
+            <h3 class="role">User Generated Content (UGC) Creator</h3>
+            <p class="company">Turbo AI</p>
+            <ul>
+              <li>Developed creative promotional videos for social media.</li>
+              <li>Created promotional content for TikTok and Instagram.</li>
+            </ul>
+          </div>
+        </article>
 
-            <div>
-              <div class="role">Social Media Marketing Intern</div>
-              <div class="company">Beauty Coterie</div>
+        <article class="experience-item">
+          <div class="date">August 2023 — February 2024<br>Seattle, WA</div>
+          <div>
+            <h3 class="role">Social Media / Digital Content Creator</h3>
+            <p class="company">The Citizens Foundation</p>
+            <ul>
+              <li>Created digital marketing posts, brochures, and Instagram
+                content.</li>
+              <li>Created and hosted a kid-zone program and contributed to
+                fundraising events.</li>
+            </ul>
+          </div>
+        </article>
 
-              <ul>
-                <li>Managed and creatively directed social media platforms.</li>
-                <li>
-                  Developed marketing campaign concepts and design elements
-                  to promote an AI-powered beauty tool providing personalized
-                  skincare recommendations.
-                </li>
-              </ul>
-            </div>
+        <article class="experience-item">
+          <div class="date">July 2021 — November 2022<br>Redmond, WA</div>
+          <div>
+            <h3 class="role">Assistant Center Director</h3>
+            <p class="company">Mathnasium</p>
+            <ul>
+              <li>Organized student sessions and answered client calls and
+                emails.</li>
+              <li>Worked with K–12 students and parents and maintained student
+                records and an organized learning center.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills showcase -->
+    <section id="skills">
+      <div class="container">
+        <p class="section-label">03 — Skills</p>
+        <h2>Skills & tools.</h2>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Digital Design</h3>
+            <p>Adobe Photoshop, Canva</p>
           </article>
 
-          <article class="experience-item">
-            <div class="date">
-              July 2025 — December 2025<br>
-              Remote
-            </div>
-
-            <div>
-              <div class="role">User Generated Content (UGC) Creator</div>
-              <div class="company">Turbo AI</div>
-
-              <ul>
-                <li>Developed creative promotional videos for social media.</li>
-                <li>Created content for TikTok and Instagram.</li>
-              </ul>
-            </div>
+          <article class="skill-card">
+            <h3>Social Media</h3>
+            <p>Instagram, TikTok, Twitter/X, social media management</p>
           </article>
 
-          <article class="experience-item">
-            <div class="date">
-              August 2023 — February 2024<br>
-              Seattle, WA
-            </div>
-
-            <div>
-              <div class="role">Social Media / Digital Content Creator</div>
-              <div class="company">The Citizens Foundation</div>
-
-              <ul>
-                <li>Created digital media marketing posts for social media.</li>
-                <li>Designed digital brochures and Instagram posts.</li>
-                <li>Created and hosted a kid-zone program.</li>
-                <li>Contributed to roleplay activities and fundraising events.</li>
-              </ul>
-            </div>
+          <article class="skill-card">
+            <h3>Office & Productivity</h3>
+            <p>Microsoft Word, Excel, PowerPoint, Google Slides, Google Docs</p>
           </article>
 
-          <article class="experience-item">
-            <div class="date">
-              July 2021 — November 2022<br>
-              Redmond, WA
-            </div>
-
-            <div>
-              <div class="role">Assistant Center Director</div>
-              <div class="company">Mathnasium</div>
-
-              <ul>
-                <li>Organized students into their sessions.</li>
-                <li>Answered client phone calls and emails.</li>
-                <li>
-                  Engaged with K–12 students and their parents regarding
-                  questions and concerns.
-                </li>
-                <li>Filed, graded, and entered student papers into databases.</li>
-                <li>
-                  Maintained an organized and welcoming center for clients
-                  and students.
-                </li>
-              </ul>
-            </div>
+          <article class="skill-card">
+            <h3>AI Tools</h3>
+            <p>ChatGPT, Copilot, Gemini</p>
           </article>
 
+          <article class="skill-card">
+            <h3>Professional Skills</h3>
+            <p>Communication, organization, management, leadership, creative direction</p>
+          </article>
+
+          <article class="skill-card">
+            <h3>Languages</h3>
+            <p>English and Urdu (fluent); Spanish (elementary proficiency)</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills">
+    <!-- Projects: three detailed project summaries -->
+    <section id="projects">
       <div class="container">
-        <div class="section-label">03 — Skills</div>
-        <h2>Tools & skills.</h2>
+        <p class="section-label">04 — Projects</p>
+        <h2>Selected projects.</h2>
 
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Digital Design</h3>
-            <p>Adobe Photoshop, Canva</p>
-          </div>
+        <p class="projects-intro">
+          Selected marketing and digital-content work based on my professional
+          and campus experience. Contact me for additional work samples where
+          a public project link is not available.
+        </p>
 
-          <div class="skill-card">
-            <h3>Social Media</h3>
-            <p>Instagram, TikTok, Twitter/X, and social media management</p>
-          </div>
+        <div class="projects-grid">
 
-          <div class="skill-card">
-            <h3>Productivity</h3>
+          <article class="project-card">
+            <span class="project-tag">Project 01</span>
+            <h3>Beauty Coterie Marketing Campaign</h3>
+            <p class="project-type">Social Media · Campaign Concepts · Design</p>
             <p>
-              Microsoft Word, Excel, PowerPoint, Google Slides, Google Docs
+              Developed campaign concepts and design elements to promote an
+              AI-powered beauty tool offering personalized skincare
+              recommendations. The work combined product messaging with
+              social-first creative ideas.
             </p>
-          </div>
+            <a class="project-link"
+               href="mailto:ezzazaidii@gmail.com?subject=Beauty%20Coterie%20Project%20Inquiry">
+              Request a work sample ↗
+            </a>
+          </article>
 
-          <div class="skill-card">
-            <h3>AI Tools</h3>
-            <p>GPT, Copilot, Gemini</p>
-          </div>
-
-          <div class="skill-card">
-            <h3>Management & Leadership</h3>
-            <p>Management, leadership, organization, and communication</p>
-          </div>
-
-          <div class="skill-card">
-            <h3>Languages</h3>
+          <article class="project-card">
+            <span class="project-tag">Project 02</span>
+            <h3>Turbo AI Promotional Videos</h3>
+            <p class="project-type">Video Content · TikTok · Instagram</p>
             <p>
-              English and Urdu — fluent proficiency;
-              Spanish — elementary proficiency
+              Created promotional video content for social platforms to
+              advertise Turbo AI. The content presented a digital product
+              in a concise, engaging format for social media audiences.
             </p>
-          </div>
+            <a class="project-link"
+               href="mailto:ezzazaidii@gmail.com?subject=Turbo%20AI%20Project%20Inquiry">
+              Request a work sample ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-tag">Project 03</span>
+            <h3>Campus Marketing & Public Outreach</h3>
+            <p class="project-type">Digital Content · Public Relations · Events</p>
+            <p>
+              Designed and managed outreach and social media content for
+              Rutgers organizations to promote campus events and discussions
+              and connect with student communities.
+            </p>
+            <div>
+              <a class="project-link"
+                 href="https://www.linkedin.com/in/ezzazaidi/"
+                 target="_blank" rel="noopener noreferrer">
+                View LinkedIn ↗
+              </a>
+              <br>
+              <a class="project-link"
+                 href="mailto:ezzazaidii@gmail.com?subject=Campus%20Marketing%20Project%20Inquiry">
+                Contact me about this work ↗
+              </a>
+            </div>
+          </article>
+
         </div>
+
+        <p class="project-note">
+          Project summaries describe work completed in these roles. Contact
+          links are provided when a public project URL is not available.
+        </p>
       </div>
     </section>
 
     <!-- Education -->
     <section id="education">
       <div class="container">
-        <div class="section-label">04 — Education</div>
-        <h2>Currently learning.</h2>
+        <p class="section-label">05 — Education</p>
+        <h2>Education.</h2>
 
-        <div class="education-card">
+        <article class="education-card">
           <h3>Rutgers University — Rutgers Business School</h3>
-          <div class="subheading">B.S. in Business — Marketing</div>
-
-          <p>
-            <strong>Minor:</strong>
-            Digital Communication, Information, and Media (DCIM)
+          <p class="subheading">Bachelor of Science in Business — Marketing</p>
+          <p><strong>Minor:</strong> Digital Communication, Information, and Media (DCIM)</p>
+          <p style="margin-top: 14px;">
+            Relevant coursework: Intro to Marketing, Intro to Supply Chain
+            Management, Management Skills, Microeconomics, Macroeconomics,
+            Computer Applications for Business, Statistics for Business,
+            Financial Accounting, and Calculus I.
           </p>
-
-          <p style="margin-top: 15px;">
-            Relevant coursework includes Intro to Marketing, Intro to Supply
-            Chain Management, Management Skills, Microeconomics,
-            Macroeconomics, Computer Applications for Business, Statistics
-            for Business, Financial Accounting, and Calculus I.
+          <p style="margin-top: 14px;">
+            <strong>Expected graduation:</strong> May 2028
           </p>
-
-          <p style="margin-top: 15px;">
-            Expected graduation: May 2028
-          </p>
-        </div>
+        </article>
       </div>
     </section>
 
     <!-- Leadership -->
     <section id="leadership">
       <div class="container">
-        <div class="section-label">05 — Leadership</div>
-        <h2>Outside the classroom.</h2>
+        <p class="section-label">06 — Leadership</p>
+        <h2>Campus involvement.</h2>
 
-        <div class="leadership-card">
+        <article class="leadership-card">
           <h3>Bridge Rutgers</h3>
-          <div class="subheading">
-            Public Relations Chair • October 2025 — Present
-          </div>
-
+          <p class="subheading">Public Relations Chair · October 2025 — Present</p>
           <ul>
-            <li>
-              Executive board member of the Bridge USA chapter at Rutgers
-              University.
-            </li>
-            <li>
-              Designed and managed public outreach content promoting campus
-              events and discussions on democracy and political discourse.
-            </li>
+            <li>Serve on the executive board of the Bridge USA chapter at
+              Rutgers University.</li>
+            <li>Design and manage outreach content promoting campus events
+              and discussions on democracy and political discourse.</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="leadership-card">
+        <article class="leadership-card">
           <h3>Rutgers Muslim Public Relations Council (MPRC)</h3>
-          <div class="subheading">
-            Marketing Team • August 2026 — Present
-          </div>
-
+          <p class="subheading">Marketing Team · August 2026 — Present</p>
           <ul>
-            <li>Executive board member of MPRC at Rutgers University.</li>
-            <li>
-              Designed and directed social media content to promote MPRC
-              events and bring Muslim identities and communities together
-              through religious and cultural events.
-            </li>
+            <li>Serve on the MPRC team at Rutgers University.</li>
+            <li>Design and direct social media content promoting campus events
+              and connecting Muslim communities through religious and cultural
+              programming.</li>
           </ul>
-        </div>
+        </article>
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="contact">
       <div class="container">
-        <div class="section-label">06 — Contact</div>
+        <p class="section-label">07 — Contact</p>
         <h2>Let's connect.</h2>
 
         <p class="contact-text">
           Interested in marketing, digital content, social media, or creative
-          opportunities? Feel free to reach out.
+          opportunities? Reach out by email or connect with me on LinkedIn.
         </p>
 
         <div class="buttons">
-          <a class="button primary" href="mailto:ezzazaidii@gmail.com">
-            Email Me
-          </a>
-
-          <a
-            class="button"
-            href="https://www.linkedin.com/in/ezzazaidi/"
-            target="_blank"
-            rel="noopener"
-          >
-            LinkedIn ↗
-          </a>
+          <a class="button primary" href="mailto:ezzazaidii@gmail.com">Email me ↗</a>
+          <a class="button"
+             href="https://www.linkedin.com/in/ezzazaidi/"
+             target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </div>
       </div>
     </section>
@@ -709,11 +790,8 @@
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 Ezza Zaidi · Built with HTML & CSS.
-    </div>
+    <div class="container">© 2026 Ezza Zaidi · Built with HTML and CSS.</div>
   </footer>
 
 </body>
 </html>
-
